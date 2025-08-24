@@ -1,0 +1,490 @@
+/* =========================================================================
+   Khepri Eduprep Stylesheet
+   ========================================================================= */
+
+:root {
+--primary-color: #007BFF;
+--secondary-color: #00C9A7;
+--accent-color: #FF8D1E;
+--dark-blue: #0B2447;
+--text-color: #555;
+--heading-color: #1A1A1A;
+--bg-light: #F8F9FA;
+--bg-white: #FFFFFF;
+--border-color: #EAEAEA;
+--font-primary: 'Poppins', sans-serif;
+--font-headings: 'Unkempt', cursive;
+--box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+--bg-white-rgb: 255, 255, 255; 
+}
+[data-theme="dark"] {
+--text-color: #ccc;
+--heading-color: #FFFFFF;
+--bg-light: #1A1A1A;
+--bg-white: #2C2C2C;
+--border-color: #444;
+--box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+--bg-white-rgb: 44, 44, 44; 
+}
+body {
+font-family: var(--font-primary);
+color: var(--text-color);
+background-color: var(--bg-light);
+line-height: 1.7;
+transition: background-color 0.3s, color 0.3s;
+}
+h1, h2, h3, h4, h5, h6 {
+font-family: var(--font-headings);
+color: var(--heading-color);
+font-weight: 700;
+}
+.section-title {
+font-size: 2.5rem;
+margin-bottom: 2rem;
+font-weight: 700;
+}
+.btn-primary {
+background-color: var(--primary-color);
+border-color: var(--primary-color);
+padding: 12px 30px;
+border-radius: 50px;
+font-weight: 600;
+transition: all 0.3s ease;
+}
+.btn-primary:hover {
+background-color: #0056b3;
+border-color: #0056b3;
+transform: translateY(-2px);
+}
+.btn-secondary {
+background-color: var(--secondary-color);
+border-color: var(--secondary-color);
+padding: 14px 35px;
+border-radius: 50px;
+font-weight: 600;
+color: white;
+transition: all 0.3s ease;
+}
+.btn-secondary:hover {
+background-color: #00a286;
+border-color: #00a286;
+color: white;
+transform: translateY(-3px);
+box-shadow: 0 4px 15px rgba(0, 201, 167, 0.4);
+}
+/* 2. Top Bar & Navigation
+--------------------------- */
+.top-bar {
+background-color: var(--dark-blue);
+padding: 8px 0;
+font-size: 0.9rem;
+}
+.top-bar a {
+color: rgba(255, 255, 255, 0.8);
+text-decoration: none;
+transition: color 0.3s;
+}
+.top-bar a:hover {
+color: white;
+}
+.navbar {
+background-color: var(--bg-white);
+box-shadow: var(--box-shadow);
+padding: 1rem 0;
+transition: background-color 0.3s;
+}
+.navbar-brand.logo {
+font-family: var(--font-headings);
+font-size: 1.8rem;
+color: var(--heading-color);
+font-weight: 700;
+}
+.navbar .nav-link {
+color: var(--text-color);
+font-weight: 600;
+margin: 0 1rem;
+position: relative;
+transition: color 0.3s;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+color: var(--primary-color);
+}
+.navbar .nav-link::after {
+content: '';
+position: absolute;
+bottom: -5px;
+left: 0;
+width: 0;
+height: 2px;
+background-color: var(--primary-color);
+transition: width 0.3s ease-out;
+}
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+width: 100%;
+}
+/* 3. Hero Section
+------------------- */
+.hero-section {
+padding: 100px 0;
+background-color: var(--bg-white);
+overflow: hidden;
+}
+.hero-title {
+font-size: 3.5rem;
+line-height: 1.2;
+margin-bottom: 1.5rem;
+}
+.hero-subtitle {
+font-size: 1.2rem;
+margin-bottom: 2.5rem;
+}
+.hero-image-column {
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.hero-image-stack {
+position: relative;
+max-width: 500px;
+}
+.background-blob {
+position: absolute;
+top: 50%;
+left: 50%;
+width: 100%;
+height: 100%;
+background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+transform: translate(-50%, -50%) rotate(-15deg);
+animation: morph 8s ease-in-out infinite;
+z-index: 1;
+}
+.hero-image {
+position: relative;
+z-index: 2;
+border-radius: 1.5rem;
+box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+@keyframes morph {
+0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+}
+/* 4. Feature Blocks
+--------------------- */
+.feature-blocks {
+background-color: var(--bg-light);
+}
+.feature-card {
+background: var(--bg-white);
+padding: 40px 30px;
+border-radius: 15px;
+box-shadow: var(--box-shadow);
+transition: all 0.3s ease;
+height: 100%;
+}
+.feature-card:hover {
+transform: translateY(-10px);
+box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+.feature-card .icon-wrapper {
+width: 80px;
+height: 80px;
+margin: 0 auto 20px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 2.5rem;
+color: #fff;
+}
+.feature-card .icon-wrapper.color-1 { background-color: var(--primary-color); }
+.feature-card .icon-wrapper.color-2 { background-color: var(--secondary-color); }
+.feature-card .icon-wrapper.color-3 { background-color: var(--accent-color); }
+.feature-card h3 {
+font-size: 1.5rem;
+margin-bottom: 1rem;
+}
+/* 5. About Snippet Section
+------------------------------ */
+.about-snippet {
+background-color: var(--bg-white);
+}
+.image-frame-wrapper {
+position: relative;
+max-width: 450px;
+margin: 0 auto;
+}
+.image-frame-wrapper img {
+width: 100%;
+height: auto;
+display: block;
+clip-path: url(#blob-shape);
+transition: all 0.3s ease-in-out;
+}
+.image-frame-wrapper:hover img {
+transform: scale(1.05);
+}
+.counter-box h3 {
+font-family: var(--font-primary);
+font-weight: 700;
+color: var(--secondary-color);
+}
+.counter-box p {
+font-weight: 600;
+}
+/* 6. Footer
+------------- */
+.site-footer {
+background-color: var(--dark-blue);
+color: rgba(255, 255, 255, 0.7);
+padding: 80px 0;
+}
+.site-footer .footer-heading {
+color: #fff;
+font-size: 1.2rem;
+margin-bottom: 1.5rem;
+}
+.site-footer .list-unstyled a {
+color: rgba(255, 255, 255, 0.7);
+text-decoration: none;
+transition: color 0.3s;
+}
+.site-footer .list-unstyled a:hover {
+color: #fff;
+}
+.site-footer .social-icons a {
+display: inline-flex;
+width: 40px;
+height: 40px;
+background: rgba(255, 255, 255, 0.1);
+color: #fff;
+border-radius: 50%;
+align-items: center;
+justify-content: center;
+margin-right: 10px;
+text-decoration: none;
+transition: background-color 0.3s;
+}
+.site-footer .social-icons a:hover {
+background-color: var(--primary-color);
+}
+.site-footer .copyright p {
+color: rgba(255, 255, 255, 0.5);
+margin: 0;
+}
+/* 7. Theme Switcher & Misc.
+---------------------------- */
+.theme-switch-wrapper {
+display: flex;
+align-items: center;
+}
+.theme-switch {
+position: relative;
+display: inline-block;
+width: 50px;
+height: 24px;
+}
+.theme-switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+transition: .4s;
+border-radius: 34px;
+}
+.slider:before {
+position: absolute;
+content: "";
+height: 16px;
+width: 16px;
+left: 4px;
+bottom: 4px;
+background-color: white;
+transition: .4s;
+border-radius: 50%;
+}
+input:checked + .slider {
+background-color: var(--primary-color);
+}
+input:checked + .slider:before {
+transform: translateX(26px);
+}
+/* 8. Page Headers & Animated Backgrounds
+----------------------------------------- */
+.page-header {
+background: var(--dark-blue);
+padding: 80px 0;
+color: white;
+}
+.page-header h1 {
+color: white;
+font-size: 3.5rem;
+}
+.content-over-bg {
+position: relative;
+z-index: 2;
+background-color: rgba(var(--bg-white-rgb), 0.8);
+padding: 2rem;
+border-radius: 1rem;
+backdrop-filter: blur(5px);
+}
+/* Animated Background Container */
+.animated-bg-container {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+overflow: hidden;
+z-index: 1;
+}
+.animated-bg-container span {
+position: absolute;
+bottom: -50px;
+font-size: 1.5rem;
+font-weight: bold;
+color: rgba(0, 123, 255, 0.15);
+animation: floatUp 25s infinite linear;
+user-select: none;
+}
+[data-theme="dark"] .animated-bg-container span {
+color: rgba(0, 201, 167, 0.1);
+}
+@keyframes floatUp {
+from {
+transform: translateY(0);
+opacity: 1;
+}
+to {
+transform: translateY(-120vh); /* Move far above the screen */
+opacity: 0;
+}
+}
+/* 9. Team, Program & Pricing Cards
+------------------------------------ */
+.team-card,
+.program-card,
+.pricing-card {
+background: var(--bg-white);
+padding: 30px;
+border-radius: 15px;
+box-shadow: var(--box-shadow);
+transition: all 0.3s ease;
+text-align: center;
+height: 100%;
+}
+.team-card:hover,
+.program-card:hover,
+.pricing-card:hover {
+transform: translateY(-10px);
+box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+.program-card {
+display: flex;
+text-align: left;
+align-items: center;
+}
+.program-card .program-icon {
+font-size: 2.5rem;
+color: white;
+min-width: 80px;
+height: 80px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-right: 20px;
+}
+.program-card .program-icon.color-1 { background-color: var(--primary-color); }
+.program-card .program-icon.color-2 { background-color: var(--secondary-color); }
+.program-card .program-icon.color-3 { background-color: var(--accent-color); }
+/* 10. Contact Page & Map
+------------------------------ */
+.contact-form .form-control {
+border-radius: 8px;
+padding: 12px 15px;
+border: 1px solid var(--border-color);
+background-color: var(--bg-light);
+color: var(--text-color);
+}
+.contact-form .form-control:focus {
+border-color: var(--primary-color);
+box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+}
+.contact-info i {
+color: var(--primary-color);
+font-size: 1.5rem;
+margin-right: 15px;
+width: 30px;
+}
+.map-section {
+padding: 0; /* Full width map */
+}
+.map-container {
+height: 450px;
+width: 100%;
+}
+.map-container iframe {
+width: 100%;
+height: 100%;
+border: 0;
+}
+/* 11. Stylish Animated Cursor
+----------------------------------------- */
+body, a, button {
+cursor: none;
+}
+
+.custom-cursor {
+position: fixed;
+top: 0;
+left: 0;
+width: 1px; 
+height: 1px;
+z-index: 9999; 
+pointer-events: none; 
+}
+
+.cursor-dot {
+position: absolute;
+top: 50%;
+left: 50%;
+width: 8px;
+height: 8px;
+background-color: #FFA500; 
+border-radius: 50%;
+transform: translate(-50%, -50%);
+transition: transform 0.2s ease-out; 
+}
+
+.cursor-circle {
+position: absolute;
+top: 50%;
+left: 50%;
+width: 40px;
+height: 40px;
+border: 2px solid #FFA500;
+border-radius: 50%;
+transform: translate(-50%, -50%);
+}
+/* The "grow" effect when hovering over links/buttons */
+.custom-cursor.grow .cursor-circle {
+transform: translate(-50%, -50%) scale(1.5);
+background-color: rgba(255, 165, 0, 0.2);
+border-color: transparent;
+}
+.custom-cursor.grow .cursor-dot {
+transform: translate(-50%, -50%) scale(0.5);
+}
